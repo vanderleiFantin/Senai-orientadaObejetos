@@ -11,9 +11,10 @@ namespace AplicacaoPOO.Dominio
     //Nome, CPF, Valor de debito, Valor de credito
     public class Cliente
     {
-        string Nome { get; set; }
-        string Cpf { get; set; }
-        Debito debito { get; set; }
-        Credito credito { get; set; }
+        public string Nome { get; set; }
+        public double SaldoInicial { get; set; }
+        public string Cpf { get; set; }
+        public Debito debito { get; set; }
+        public Credito credito { get; set; }
     }
 }
