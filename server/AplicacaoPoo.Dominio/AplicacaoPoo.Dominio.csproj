@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\client\AplicacaoPOO.Windows\AplicacaoPOO.Windows.csproj" />
-  </ItemGroup>
-
 </Project>
