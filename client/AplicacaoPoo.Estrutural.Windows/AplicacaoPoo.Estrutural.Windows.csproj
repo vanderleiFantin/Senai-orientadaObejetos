@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AplicacaoPoo.Windows\AplicacaoPoo.Windows.csproj" />
+  </ItemGroup>
+
 </Project>
