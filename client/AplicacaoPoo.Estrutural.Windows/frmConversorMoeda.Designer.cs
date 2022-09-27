@@ -44,7 +44,6 @@
             this.txtValorEmDolar.ShortcutsEnabled = false;
             this.txtValorEmDolar.Size = new System.Drawing.Size(151, 23);
             this.txtValorEmDolar.TabIndex = 1;
-            this.txtValorEmDolar.TextChanged += new System.EventHandler(this.txtValorEmDolar_TextChanged);
             // 
             // lblPrimeiroValor
             // 
@@ -68,11 +67,17 @@
             // 
             // cmbPrimeiroValor
             // 
+            this.cmbPrimeiroValor.AutoCompleteCustomSource.AddRange(new string[] {
+            "D",
+            "L",
+            "E",
+            "R"});
             this.cmbPrimeiroValor.FormattingEnabled = true;
             this.cmbPrimeiroValor.Items.AddRange(new object[] {
             "Dolar Americano",
             "Euro",
-            "Libra Esterlina"});
+            "Libra Esterlina",
+            "Real"});
             this.cmbPrimeiroValor.Location = new System.Drawing.Point(112, 93);
             this.cmbPrimeiroValor.Name = "cmbPrimeiroValor";
             this.cmbPrimeiroValor.Size = new System.Drawing.Size(151, 23);
