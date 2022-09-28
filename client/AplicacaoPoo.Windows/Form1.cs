@@ -1,4 +1,4 @@
-namespace AplicacaoPOO.Windows
+namespace AplicacaoPoo.Windows
 {
     public partial class Form1 : Form
     {
