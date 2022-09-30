@@ -10,26 +10,40 @@ using System.Windows.Forms;
 
 namespace AplicacaoPoo.Estrutural.Windows
 {
+
     public partial class frmComissionamento : Form
     {
+
+        
         public frmComissionamento()
         {
             InitializeComponent();
+            
+            
+          
         }
-
-        private void frmComissionamento_Load(object sender, EventArgs e)
+        
+        public void btnCalcularComissao_Click(object sender, EventArgs e)
         {
+            //public decimal CalcularComissao(decimal valor)
+            //{
+            //    var PrecoUnitario = decimal.Parse(txtCodigoPeca.Text);
+            //    var QuantidadeVendida = decimal.Parse(txtQuantidadePeca.Text);
+            //    var valorComissao = ((PrecoUnitario * QuantidadeVendida) * 5) / 100;
+            //}
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+       
+
+        private void HabilitarOuDesabilitarBotaoCalcular(object sender, EventArgs e)
         {
-
+            if (txtCodigoPeca.Text != "" && txtQuantidadePeca.Text != "")
+            {
+                btnCalcularComissao.Enabled = true;
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
+        
     }
 }

@@ -42,5 +42,10 @@ namespace AplicacaoPoo.Estrutural.Windows
             form.Show();
             
         }
+
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

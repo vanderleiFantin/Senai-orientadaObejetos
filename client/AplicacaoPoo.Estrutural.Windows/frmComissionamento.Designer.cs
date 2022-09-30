@@ -38,6 +38,8 @@
             this.txtPrecoUnitario = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnCalcularComissao = new System.Windows.Forms.Button();
+            this.lblTotalPreco = new System.Windows.Forms.Label();
+            this.txtPrecoTotal = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblVendedor
@@ -78,6 +80,7 @@
             // 
             // cmbVendedor
             // 
+            this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVendedor.FormattingEnabled = true;
             this.cmbVendedor.Items.AddRange(new object[] {
             "JOAO",
@@ -93,10 +96,12 @@
             // txtCodigoPeca
             // 
             this.txtCodigoPeca.Location = new System.Drawing.Point(181, 100);
+            this.txtCodigoPeca.Multiline = true;
             this.txtCodigoPeca.Name = "txtCodigoPeca";
             this.txtCodigoPeca.Size = new System.Drawing.Size(100, 23);
             this.txtCodigoPeca.TabIndex = 5;
-            this.txtCodigoPeca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtCodigoPeca.Text = "123\r\n321\r\n456\r\n654\r\n789\r\n987";
+            this.txtCodigoPeca.TextChanged += new System.EventHandler(this.HabilitarOuDesabilitarBotaoCalcular);
             // 
             // txtQuantidadePeca
             // 
@@ -104,14 +109,16 @@
             this.txtQuantidadePeca.Name = "txtQuantidadePeca";
             this.txtQuantidadePeca.Size = new System.Drawing.Size(100, 23);
             this.txtQuantidadePeca.TabIndex = 6;
+            this.txtQuantidadePeca.TextChanged += new System.EventHandler(this.HabilitarOuDesabilitarBotaoCalcular);
             // 
             // txtPrecoUnitario
             // 
+            this.txtPrecoUnitario.Enabled = false;
             this.txtPrecoUnitario.Location = new System.Drawing.Point(408, 100);
             this.txtPrecoUnitario.Name = "txtPrecoUnitario";
+            this.txtPrecoUnitario.ReadOnly = true;
             this.txtPrecoUnitario.Size = new System.Drawing.Size(100, 23);
             this.txtPrecoUnitario.TabIndex = 7;
-            this.txtPrecoUnitario.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -122,18 +129,40 @@
             // 
             // btnCalcularComissao
             // 
-            this.btnCalcularComissao.Location = new System.Drawing.Point(190, 214);
+            this.btnCalcularComissao.Location = new System.Drawing.Point(181, 215);
             this.btnCalcularComissao.Name = "btnCalcularComissao";
             this.btnCalcularComissao.Size = new System.Drawing.Size(171, 39);
             this.btnCalcularComissao.TabIndex = 9;
             this.btnCalcularComissao.Text = "Calcular Comissão";
             this.btnCalcularComissao.UseVisualStyleBackColor = true;
+            this.btnCalcularComissao.Click += new System.EventHandler(this.btnCalcularComissao_Click);
+            // 
+            // lblTotalPreco
+            // 
+            this.lblTotalPreco.AutoSize = true;
+            this.lblTotalPreco.Location = new System.Drawing.Point(290, 158);
+            this.lblTotalPreco.Name = "lblTotalPreco";
+            this.lblTotalPreco.Size = new System.Drawing.Size(65, 15);
+            this.lblTotalPreco.TabIndex = 10;
+            this.lblTotalPreco.Text = "Preço Total";
+            // 
+            // txtPrecoTotal
+            // 
+            this.txtPrecoTotal.Enabled = false;
+            this.txtPrecoTotal.Location = new System.Drawing.Point(408, 150);
+            this.txtPrecoTotal.Name = "txtPrecoTotal";
+            this.txtPrecoTotal.ReadOnly = true;
+            this.txtPrecoTotal.Size = new System.Drawing.Size(100, 23);
+            this.txtPrecoTotal.TabIndex = 11;
+            this.txtPrecoTotal.TextChanged += new System.EventHandler(this.txtPrecoTotal_TextChanged);
             // 
             // frmComissionamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 290);
+            this.ClientSize = new System.Drawing.Size(558, 424);
+            this.Controls.Add(this.txtPrecoTotal);
+            this.Controls.Add(this.lblTotalPreco);
             this.Controls.Add(this.btnCalcularComissao);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtPrecoUnitario);
@@ -146,7 +175,6 @@
             this.Controls.Add(this.lblVendedor);
             this.Name = "frmComissionamento";
             this.Text = "Comissão de Vendedores de Peças";
-            this.Load += new System.EventHandler(this.frmComissionamento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +190,12 @@
         private TextBox txtCodigoPeca;
         private TextBox txtQuantidadePeca;
         private TextBox txtPrecoUnitario;
-        private DateTimePicker dateTimePicker1;
         private Button btnCalcularComissao;
+        internal DateTimePicker dateTimePicker1;
+        private Label lblTotalPreco;
+        private TextBox txtPrecoTotal;
+        private Label lblClienteComprou;
+        private Label lblVendedorCompras;
+        private Label lblQuantidadeCompras;
     }
 }

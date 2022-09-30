@@ -17,6 +17,7 @@ namespace AplicacaoPoo.Windows.services
         decimal CotacaoReal = 1.0m;
         public decimal ConverterDolarEmReal (decimal valor)
         {
+
             return valor*CotacaoDolar;
         }
         public decimal ConverterLibraEmReal(decimal valor)
